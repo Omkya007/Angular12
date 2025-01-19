@@ -1,0 +1,51 @@
+
+<!-- <div class="row" *ngIf="allPosts.length>0 else noPosts">
+    <div class="col-md-4 mb-3" *ngFor="let post of allPosts">
+        <div class="card">
+            <div class="card-header h-100 ">
+                <h3 class="m-0">
+                    {{post.title}} {{post.id}}
+                </h3>
+            </div>
+            <div class="card-body">
+                <p class="m-0">
+                   {{post.body}} 
+                </p>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <div onclick="onEdit(this)" class="btn btn-outline-primary btn-sm">Edit</div>
+                <div onclick="onDelete(this)" class="btn btn-outline-danger btn-sm">Remove</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noPosts>
+    <p class="alert alert-primary"> No posts </p>
+</ng-template> -->
+
+
+<ng-container *ngIf="allPosts.length>0 else noPosts">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let post of allPosts">
+           <div class="card h-100 mb-3">
+            <div class="card-header">
+                {{post.title}} {{post.id}}
+             </div>
+            <div class="card-body">
+                {{post.body}}
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+                <button class="btn-outline-primary btn-sm">Edit</button>
+                <button class="btn-outline-primary btn-sm">Edit</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-template #noPosts>
+    <p class="alert alert-primary">
+        No Posts
+    </p>
+</ng-template>

@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card" *ngFor="let mob of mobilePro">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        
+                        <div class="img-container">
+                            <img [src]="mob.image" [alt]="mob.name" class="img-fluid" *ngIf="mob.image else noImg" >
+
+                            <ng-template #noImg>
+                                <p class="noImg text-danger">
+                                    Product is not available
+                                </p>
+                            </ng-template>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h4>
+                            {{mob.name}}
+                        </h4>
+
+                        <small
+                        [ngClass]="{
+                            'bg-success':mob.rating>4,
+                            'bg-warning':mob.rating<4,
+                            'bg-danger':mob.rating<2
+                        }" 
+                        >
+                            {{mob.rating}}
+                        </small>
+
+                        <ul *ngFor="let spec of mob.Specifications">
+                            <li>{{spec.camera}}</li>
+                            <li>{{spec.display}}</li>
+                            <li>{{spec.memory}}</li>
+                            <li>{{spec.processor}}</li>
+                           </ul>
+                    </div>
+                    <div class="col-md-2">
+                       <strong>
+                        Offer Price $9999
+                       </strong>
+                       <small class="d-block">
+                        Price $15999
+                       </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

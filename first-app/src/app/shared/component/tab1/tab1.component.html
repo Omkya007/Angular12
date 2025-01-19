@@ -1,0 +1,62 @@
+<ul class="nav nav-piils">
+    <li class="nav-item active">
+        <a
+        [ngClass]="{
+            'active':selectedFrame.toLowerCase().includes('angular')
+        }" 
+        (click)="selectedFrame='angular'"
+        
+        class="nav-link" href="javaScript:;">
+            Angular
+        </a>
+        </li>
+        <li class="nav-item">
+        <a
+        [ngClass]="{
+            'active':selectedFrame.toLowerCase().includes('react')
+        }" 
+        (click)="selectedFrame='react'"
+        
+        class="nav-link" href="javaScript:;">
+            React
+        </a>
+    </li>
+    <li class="nav-item">
+        <a
+        [ngClass]="{
+            'active':selectedFrame.toLowerCase().includes('vue')
+        }" 
+        (click)="selectedFrame=' vue'"
+        
+        class="nav-link" href="javaScript:;">
+            vue
+        </a>
+    </li>
+        
+</ul>
+
+<div class="row">
+    <div class="col-md-10">
+        <div class="card" *ngIf="selectedFrame.toLowerCase().includes('angular')">
+            <div class="card-body">
+                <p>
+                    <strong>Angular</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum deserunt porro mollitia rem quas quod?
+                </p>
+            </div>
+        </div>
+        <div class="card" *ngIf="selectedFrame.toLowerCase().includes('react')">
+            <div class="card-body">
+                <p>
+                    <strong>React</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum deserunt porro mollitia rem quas quod?
+                </p>
+            </div>
+        </div>
+        <div class="card" *ngIf="selectedFrame.toLowerCase().includes('vue')">
+            <div class="card-body">
+                <p>
+                    <strong>Vue</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum deserunt porro mollitia rem quas quod?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

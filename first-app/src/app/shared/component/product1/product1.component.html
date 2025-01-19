@@ -1,0 +1,66 @@
+
+
+<!-- 
+<p
+
+[ngStyle]="{
+    backgroundColor:this.isProd ? 'orange':'black'
+}"
+[ngClass]="{
+    'text-white':isProd===true,
+    'text-danger':isProd!==true
+}"
+>The product name is <strong>{{productName}}</strong> and productId is <strong>{{productId}}</strong>
+<br> -->
+<!-- <strong [ngClass]="{
+    'd-none':!isProd
+}">The product is available</strong>
+
+<strong [ngClass]="{
+    'd-none':isProd
+}">The product is out</strong> -->
+ 
+<!-- <strong *ngIf="isProd">Product is available</strong>
+<strong *ngIf="!isProd">Product is out </strong>
+</p> -->
+
+<!-- <strong *ngIf="isProd;else Prod">The Prod is available </strong>
+
+<ng-template #Prod>
+    The Product is out of Stock
+</ng-template>
+
+<p [ngStyle]="{
+
+    backgroundColor:bgGet()
+}"
+[ngClass]="{
+    'text-white':isMan===true,
+    'text-danger':isMan!==true
+}"
+>The Man with name <strong>{{Mannmae}}</strong> and with the ID <strong>{{ManId}}</strong></p> -->
+<!-- <hr>
+
+<button
+(click)="toggle()"
+class="btn btn-primary">Click</button>
+<div 
+[ngClass]="{
+    'd-none':isVisible===false
+    
+}
+"
+class="box">Box</div>
+
+
+<hr>
+
+<button
+(click)="isVisible =!isVisible"
+ class="btn-primary">
+    Click
+</button>
+
+<div 
+*ngIf="isVisible"
+class="box"> Box</div> -->

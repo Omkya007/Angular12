@@ -1,0 +1,18 @@
+.img-container{
+    height: 300px;
+
+
+    img{
+        height:100%;
+        width:100%;
+        object-fit:cover;
+    }
+   .noImg{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: grey;
+   }
+}

@@ -1,0 +1,38 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a 
+        (click)="selectedFrameWork='angular'"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('angular')
+        }"
+        href="javscript:;" class="nav-link">Angular</a>
+    </li>
+    <li class="nav-item">
+        <a 
+        (click)="selectedFrameWork='react'"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('react')
+        }"
+        href="javscript:;" class="nav-link">React</a>
+    </li>
+    <li class="nav-item">
+        <a 
+        (click)="selectedFrameWork='vue'"
+        [ngClass]="{
+            'active':selectedFrameWork.toLowerCase().includes('vue')
+        }"
+        href="javscript:;" class="nav-link">Vue</a>
+    </li>
+</ul>
+
+<div [ngSwitch]="selectedFrameWork">
+    <p class="alert alert-primary" *ngSwitchCase="'angular'">
+        <strong>Angular</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, eveniet.
+    </p>
+    <p class="alert alert-primary" *ngSwitchCase="'react'">
+        <strong>react</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, eveniet.
+    </p>
+    <p class="alert alert-primary" *ngSwitchCase="'vue'">
+        <strong>vue</strong> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi, eveniet.
+    </p>
+</div>

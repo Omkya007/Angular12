@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-md-4 mt-4 mb-4 md-0">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="fname">Fname</label>
+                    <input  #fname type="text" class="form-control" id="fname">
+                    <label for="lname">Lname</label>
+                    <input  #lname type="text" class="form-control" id="lname">
+
+                    <label for="email">Email</label>
+                    <input  #email type="email" class="form-control" id="email">
+                    <label for="contact">Contact</label>
+                    <input  #contact type="text" class="form-control" id="contact">
+                </div>
+
+                <button 
+                (click)="onstd()"
+                class="btn-primary btn-sm btn-block">Add Std</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mt-4">
+        <table class="table  table-bordered">
+            <thead>
+                <tr>
+                    <th>Sr.no</th>
+                    <th>Fname</th>
+                    <th>Lname</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of stdA;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{s.fname}}</td>
+                    <td>{{s.lname}}</td>
+                    <td>{{s.email}}</td>
+                    <td>{{s.contact}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

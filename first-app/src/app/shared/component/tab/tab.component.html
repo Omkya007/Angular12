@@ -1,0 +1,44 @@
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a href="javasript:;"
+        [ngClass]="{
+            'active':selectedFarme.toLowerCase().includes('angular')
+        }"
+
+        (click)="selectedFarme='angular'"
+        class="nav-link active">Angular</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;" 
+        [ngClass]="{
+            'active':selectedFarme.toLowerCase().includes('react')
+        }"
+        (click)="selectedFarme='react'"
+        class="nav-link">React</a>
+    </li>
+    <li class="nav-item">
+        <a href="javascript:;"
+        [ngClass]="{
+            'active':selectedFarme.toLowerCase().includes('vue')
+        }"
+        (click)="selectedFarme='vue'"
+        class="nav-link">Vue</a>
+    </li>
+</ul>
+
+
+<div class="tab-content mt-2
+">
+    <div class="card">
+        <div class="card-body" *ngIf="selectedFarme.toLowerCase().includes('angular')">
+            <strong>Angular</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, numquam? Rerum voluptates perspiciatis quo excepturi at? Quae fugit dolorem at!
+        </div>
+        <div class="card-body" *ngIf="selectedFarme.toLowerCase().includes('react')">
+            <strong>React</strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo, obcaecati unde sapiente aliquam sequi cum iusto cupiditate earum corporis? Repellendus!
+        </div>
+        <div class="card-body" *ngIf="selectedFarme.toLowerCase().includes('vue')">
+            <strong>Vue</strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos est eum aliquam corrupti praesentium quos omnis autem quibusdam laudantium minima.
+
+        </div>
+    </div>
+</div>
