@@ -1,0 +1,103 @@
+<div class="container">
+    <!-- <div class="row">
+           <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    {{title | summary}}
+                </div>
+                <div class="card-header">
+                    {{title | summary :100}}
+                </div>
+                 <div class="card-body">
+                   
+                    <p class="m-0">
+                        {{course.students | number}}
+                    </p>
+                    <p class="m-0">
+                        {{course.rating |number :'2.2-4'}}
+                    </p>
+                    <p class="m-0">
+                        {{course.rating | number :'3.5-8'}}
+                    </p>
+                    <p class="m-0">
+                        {{course.releaseDate | date:'long'}}
+                    </p>
+                    <p class="m-0">
+                        {{course.price| currency:'USD'}}
+                        {{course.price| currency:'INR'}}
+                    </p>
+                </div> 
+                
+            </div>
+           </div>
+      
+        
+    </div> -->
+
+    <!-- <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="form-group">
+                <input 
+                [(ngModel)]="searchedVal"
+                type="text" class="form-control">
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>Name</th>
+                        <th>Team</th>
+                        <th>OdiRuns</th>
+                        <th>DebutYear</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let play of cricketArr|crickFilter:searchedVal; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{play.name}}</td>
+                        <td>{{play.team}}</td>
+                        <td>{{play.odiRuns}}</td>
+                        <td>{{play.debutYear}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> -->
+
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <!-- <div class="form-group">
+                <input 
+                [(ngModel)]="findPlay"
+                type="text" class="form-control">
+            </div> -->
+            <select 
+            [(ngModel)]="findPlay"
+            name="" id="" class="form-control">
+                <option value="Forward">Forward</option>
+                <option value="Midfielder">Midfielder</option>
+                <option value="Defender">Defender</option>
+            </select>
+            <table class="table table-bordered text-dark">
+                <thead>
+                    <tr>
+                        <th>Sr.no</th>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Team</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let play of football|playFilter:findPlay let i=index">
+                        <td>{{i+1}}</td>
+                        <td>{{play.id}}</td>
+                        <td>{{play.name}}</td>
+                        <td>{{play.team}}</td>
+                        <td>{{play.position}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

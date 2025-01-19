@@ -1,0 +1,54 @@
+<div class="card mb-4">
+            
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-3">
+            <!-- using or operator -->
+            <!-- <img  *ngIf="mobile.image ||'https://placehold.co/600x400' "class="img-fluid" [src]="mobile.image" [alt]="mobile.name" [title]="mobile.name"> -->
+            <!-- <ng-template #noImg>
+                <img src="https://placehold.co/600x400" [alt]="mobile.name" [title]="mobile.name" class="img-fluid">
+            </ng-template> -->
+
+            <div class="img-container">
+                <img class="img-fluid" [src]="mobileD.image" [alt]="mobileD.name" [title]="mobileD.name" *ngIf="mobileD.image ;else noIMG">
+                <ng-template #noIMG>
+                    <p class="noImg  text-danger" >Product Image not available</p>
+                </ng-template>
+            </div>
+        </div>
+        <div class="col-md-6">
+         <h3>
+            {{mobileD.name}}
+
+            <small class="p-1.5"
+         [ngClass]="{
+            'bg-success':mobileD.rating>=4,
+            'bg-warning':mobileD.rating >=3 && mobileD.rating<4,
+            'bg-danger':mobileD.rating<3
+         }"
+         >
+            {{mobileD.rating}}
+         </small>
+         </h3>
+         
+         <ul *ngFor="let mob of mobileD.Specifications">
+            <li>{{mob.camera}}</li>
+            <li>{{mob.display}}</li>
+            <li>{{mob.memory}}</li>
+            <li>{{mob.processor}}</li>
+         </ul>
+        </div>
+        <div class="col-md-3">
+            <h4>
+                99999
+                <small class="d-block text-muted">15999</small>
+            </h4>
+           
+            <strong class="text-danger" *ngIf="mobileD.noItems<10">
+                only {{mobileD.noItems}} left
+            </strong>
+        </div>
+      </div>
+    </div>
+    
+</div>
