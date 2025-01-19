@@ -1,0 +1,48 @@
+
+<div class="card">
+    <div class="card-body">
+        <form #stdF="ngForm" (ngSubmit)="onStd(stdF)">
+            <div class="form-group">
+                <label for="fname">Fname</label>
+                <input required class="form-control"
+                name="fname"
+                ngModel
+                type="text" name="fname" id="fname">
+            </div>
+            <div class="form-group">
+                <label for="lname">Lname</label>
+                <input required class="form-control"
+                name="lname"
+                ngModel
+                type="text" name="lname" id="lname">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input required class="form-control"
+                name="contact"
+                ngModel
+                type="number" name="contact" id="contact">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input required class="form-control"
+                name="Email"
+                ngModel
+                type="text" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <label for="isActive">Status</label>
+                <select required class="form-control" name="isActive" id="isActive">
+                    <option value="Active">Active</option>
+                    <option value="in-Active">Inactive</option>
+                </select>
+            </div>
+            <button 
+            [disabled]="stdF.invalid"
+            class="btn-primary btn sm btn-block">
+                Add Button
+            </button>
+        </form>
+    </div>
+</div>
+
