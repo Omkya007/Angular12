@@ -1,0 +1,252 @@
+
+
+ <!-- <div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-col-3 mt-3">
+      <form #signUp="ngForm" (ngSubmit)="onSignIn()">
+        <div ngModelGroup="userDetails">
+          <div class="form-group">
+            <label for="userName">
+              UserName*
+            </label>
+            <input
+            
+            minlength="8"
+            maxlength="12"
+            ngModel
+            required
+            #userName="ngModel"
+            type="text" id="username" name="username" class="form-control"
+            pattern="[a-zA-Z]+">
+            <strong class="text-danger" *ngIf="userName.touched && userName.hasError('required')">
+              UserName is required
+            </strong>
+            <strong class="text-danger" *ngIf="userName.dirty && userName.hasError('pattern')">
+              UserName is invalid
+            </strong>
+            <strong class="text-danger" *ngIf="userName.dirty && userName.hasError('minlength')">
+              minlength is 8 char
+            </strong>
+            <strong class="text-danger" *ngIf="userNameMax">
+              maxlength of username should be 12 char
+            </strong>
+          </div>
+          <div class="form-group">
+            <label for="email">
+              Email*
+            </label>
+            <input 
+            required
+            ngModel
+            #email="ngModel"
+            type="text" id="email" name="email" class="form-control"
+            pattern="[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+            <strong class="text-danger" *ngIf="email.touched && email.hasError('required')">
+              Email is required
+            </strong>
+            <strong class="text-danger" *ngIf="email.dirty && email.hasError('pattern')">
+              Email is invalid
+            </strong>
+          </div>
+        </div>
+
+
+        <div class="form-group">
+          <label for="secretQ">SecretQ</label>
+          <select 
+          ngModel
+          #secretQ="ngModel"
+          required
+          
+          
+          name="secretQ" id="secretQ" class="form-control">
+
+            <option value="favSport">favSport</option>
+            <option value="favbike">favbike</option>
+          </select>
+
+          <strong class="text-danger" *ngIf="secretQ.touched && secretQ.hasError('required')">
+           Secret Question is mandatory
+          </strong>
+        </div>
+
+        <div class="form-group">
+          <label for="answer">
+            Answer*
+          </label>
+          <input 
+          ngModel
+          #answer="ngModel"
+          name="answer"
+          required
+          type="text" class="form-control" id="answer">
+          <strong class="text-danger" *ngIf="answer.touched && answer.hasError('required')">
+            Answer is mandatory
+           </strong>
+
+        </div>
+        <div class="form-group">
+          <label for="isSubs">
+            <input 
+            ngModel
+            type="checkbox" name="Subscribe" id="isSubs">
+            Subscribe for daily emails
+          </label>
+        </div>
+
+        <div class="form-group">
+          
+
+          <label 
+          class="mr-2"
+          [for]="mod.moc" *ngFor="let  mod of contactMode">
+            <input
+
+            [value]="mod.moc"
+            ngModel  type="radio" name="moc" [id]="mod.moc">
+            {{mod.moc}}
+          </label>
+        </div>
+
+        <button class="btn btn-sm btn-block btn-primary">
+          Sign Up
+        </button>
+
+        <button 
+        (click)="onEdit()"
+        type="button" class="btn btn-sm btn-block btn-primary">
+          Patch Info
+        </button>
+      </form>
+
+
+      <h3>
+        {{signUp.value|json}}
+      </h3>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+<div class="container">
+  <div class="row">
+   <div class="col-md-8 mt-4">
+    <form #signUp="ngForm" (ngSubmit)="onSignIn()">
+     <ng-container ngModelGroup="userDetails">
+      <div class="form-group">
+        <label for="userName">
+          
+          Username
+        </label>
+        <input 
+
+        minlength="8"
+        maxlength="12"
+        #userName="ngModel"
+        ngModel
+        required
+        type="text" name="userName" id="userName" class="form-control" pattern="[a-zA-Z]+">
+
+
+        <strong *ngIf="userName.touched && userName.hasError('required')">
+          username is required
+        </strong>
+        <strong *ngIf="userName.dirty && userName.hasError('pattern')">
+          username invalid
+        </strong>
+        <strong *ngIf="userName.dirty && userName.hasError('minlength')">
+          username has to be atleast 8 char
+        </strong>
+        
+      </div>
+      <div class="form-group">
+        <label for="email">
+          
+          Email
+        </label>
+        <input
+        ngModel
+        #Email="ngModel"
+        ngModel
+        required
+
+        type="text" name="email" id="email" class="form-control" pattern="[a-zA-Z0-9.%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+        <strong *ngIf="Email.touched && Email.hasError('required')">
+          Email is required
+        </strong>
+        <strong *ngIf="Email.dirty && Email.hasError('pattern')">
+          Email is invalid
+        </strong>
+      </div>
+     </ng-container>
+
+      <div class="form-group">
+        <label for="secretQ">Secret Question
+        </label>
+        <select 
+        ngModel
+        #secretQ="ngModel"
+        required
+        
+        name="secretQ" id="secretQ" class="form-control">
+          <option value="favbike">favbike</option>
+          <option value="favbook">favbook</option>
+        </select>
+        <strong *ngIf="secretQ.touched && secretQ.hasError('required')">
+           Secret Question is required
+        </strong>
+      </div>
+      
+      <div class="form-group">
+        <label for="answer">
+          Answer
+        </label>
+        <input
+        ngModel
+        #answer="ngModel"
+        maxlength="40"
+        required
+        type="text" name="answer" class="form-control">
+        <strong *ngIf="answer.touched && answer.hasError('required')">
+          Answer is required
+       </strong>
+      </div>
+    
+      <div class="form-group">
+        <label for="Subs">
+          <input 
+          ngModel
+          
+          type="checkbox" name="Subs" id="Subs" >
+          Subscribe for Daily Updates
+        </label>
+      </div>
+      <div class="form-group">
+        <label  [for]="mod.moc"
+        *ngFor="let mod of contactMode" class="mr-3">
+          <input
+          ngModel
+          [value]="mod.moc"
+          type="radio" name="mode" >
+          {{mod.moc}}
+        </label>
+       
+      </div>
+  
+    <button class="btn btn-sm btn-block btn-primary">
+      Submit
+    </button>
+    <button  type="button" (click)="onPatch()" class="btn btn-sm btn-block btn-primary">
+      Patch
+    </button>
+  
+  </form>
+ 
+  <h3>
+    {{signUp.value|json}}
+  </h3>
+   </div>
+  </div>
+</div>
