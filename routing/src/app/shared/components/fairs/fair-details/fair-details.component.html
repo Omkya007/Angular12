@@ -1,0 +1,27 @@
+<div class="fair">
+    <figure class="banner"
+    [style]="{
+        'background-image':'linear-gradient(0deg,rgb(90, 111, 109),transparent),url('+fairObj.bannerUrl+')'
+    }"
+    >
+
+        <!-- <img [src]="fairObj.bannerUrl" [alt]="fairObj.fairName" [title]="fairObj.fairName"> -->
+        <figcaption class="text-white font-weight-bold">
+            <h3 class="mb-2">
+                {{fairObj.fairName}}
+            </h3>
+            <p class="mb-2">
+                {{fairObj.type}}
+            </p>
+            <p class="mb-2">
+              Registration Deadline:  {{(fairObj.startDate*1000)|date}}
+            </p>
+        </figcaption>
+    </figure>
+    <p [innerHTML]="fairObj.candidateDescription" class="mb-4">
+    
+    </p>
+    <p [innerHTML]="fairObj.schoolDescription" class="mb-2">
+        
+    </p>
+</div>

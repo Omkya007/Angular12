@@ -1,0 +1,24 @@
+
+
+<ul class="list-group" *ngIf="todoArr;else noTodo">
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let tad of todoArr">
+
+        <strong class="align-self-center">
+            {{tad.tadaItem}}
+        </strong>
+        <p>
+            <button mat-icon-button color="primary">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-icon-button color="warn" (click)="onRem(tad.tadaId)">
+                <mat-icon>delete</mat-icon>
+              </button>
+        </p>
+    </li>
+</ul>
+
+<ng-template #noTodo>
+    <p class="alert alert-info">
+        No Data
+    </p>
+</ng-template>

@@ -1,0 +1,17 @@
+<ng-container *ngIf="prodId">
+    <p>
+    
+        The product is <strong>{{product.pname}}</strong> with <Strong>{{product.pid}}</Strong>
+    </p>
+    
+    
+    
+    <button 
+    routerLink="edit" 
+    [queryParamsHandling]="'preserve'"
+    mat-raised-button color="primary">Edit</button>
+
+    <button class="ml-3" 
+    (click)="onRemove()"
+    mat-raised-button color="warn">Remove</button>
+</ng-container>

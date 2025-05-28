@@ -1,0 +1,23 @@
+
+
+<div class="card">
+    <div class="card-body">
+        <form #todoForm="ngForm" (ngSubmit)="onTodo()">
+            <div class="form-group">
+                <label for="todoItem">Todo Item</label>
+            <input 
+            ngModel
+            #todoItem="ngModel"
+            required
+            
+            type="text" name="todoItem" id="todoItem" class="form-control"
+            >
+            <strong *ngIf="todoItem.touched && todoItem.hasError('required')">
+                Please specify the item
+            </strong>
+            </div>
+            <!-- <button class="btn btn-sm btn-primary btn-block">Add todo</button> -->
+            <button mat-raised-button color="primary">Add Todo</button>
+        </form>
+    </div>
+</div>

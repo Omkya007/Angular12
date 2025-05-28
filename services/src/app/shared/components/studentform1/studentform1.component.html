@@ -1,0 +1,49 @@
+
+<form  #stForm="ngForm" (ngSubmit)="onForm()">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <label for="fname">Fname</label>
+                <input  ngModel required
+                #fname="ngModel"
+                type="text" name="fname" id="fname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lname">Lname</label>
+                <input ngModel required
+                #lname="ngModel"
+                type="text" name="lname" id="lname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input ngModel required
+                #email="ngModel"
+                type="email" name="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+                <input ngModel required
+                #contact="ngModel"
+                type="text" name="contact" id="contact" class="form-control">
+            </div>
+            <!-- <strong *ngIf="fname.touched && fname.hasError('required') && lname.touched && lname.hasError('required')">
+                Please insert the data
+            </strong> -->
+            <!-- <strong *ngIf="lname.touched && lname.hasError('required')">
+                Please insert the data
+            </strong>
+            <strong *ngIf="email.touched && email.hasError('required')">
+                Please insert the data
+            </strong>
+            <strong *ngIf="contact.touched && contact.hasError('required')">
+                Please insert the data
+            </strong> -->
+            <div class="card-footer text-right">
+                <button type="submit"
+                [disabled]="stForm.invalid"
+                mat-raised-button color="primary" class="btn-block">Add Todo</button>
+            </div>
+
+        </div>
+    </div>
+</form>

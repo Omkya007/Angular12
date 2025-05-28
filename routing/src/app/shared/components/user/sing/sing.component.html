@@ -1,0 +1,23 @@
+<ng-container *ngIf="userInfo">
+    <p>
+    
+        The UserName is <strong>{{userInfo.Username}}</strong> with <Strong>{{userInfo.UserId}}</Strong>
+    </p>
+    
+    
+    
+    <button  mat-raised-button color="primary" routerLink="edit"  (click)="gotoEdit()">
+        Edit
+    </button>
+  
+    <button mat-raised-button color="warn" class="ml-3" (click)="onRemove()">
+        Remove
+    </button>
+</ng-container>
+
+<hr>
+
+<!-- <button class="btn btn-primary" routerLink="/user/125">
+   Load May Load Data
+</button> -->
+

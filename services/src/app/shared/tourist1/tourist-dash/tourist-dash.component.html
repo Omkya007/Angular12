@@ -1,0 +1,12 @@
+
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let tour of tourArr">
+            {{tour.fullname}}
+    </li>
+</ul>
+
+<app-tourist-card 
+
+[toursObj]="tour"
+*ngFor="let tour of tourArr"></app-tourist-card>

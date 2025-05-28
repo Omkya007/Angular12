@@ -1,0 +1,27 @@
+
+
+<div class="card mt-2">
+    <div class="card-body " >
+        <h3>
+            {{tripObj.fullname}}
+        </h3>
+        <input 
+        #fullname
+        [disabled]="!isEdit"
+        type="text" name="" id="" class="form-control" [value]="tripObj.fullname ">
+        <p *ngIf="tripObj.checkindate;else noDate">
+            Check In Date:{{tripObj.checkindate}}
+        </p>
+        <ng-template #noDate>
+            Check In Date:Not Yet Checked!
+        </ng-template>
+
+        
+        
+    </div>
+    <div class="card-footer">
+        <button mat-raised-button  (click)="isEdit=!isEdit" *ngIf="!isEdit" color="primary" class="mr-3">Edit</button>
+        <button mat-raised-button (click)="Update(fullname.value)" *ngIf="isEdit"  color="primary" class="mr-3">Done</button>
+        <button mat-raised-button  (click)="onRemove(tripObj.id)" color="warn" class="mr-3">Remove</button>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+
+<form [formGroup]="userForm" (ngSubmit)="onAdd()">
+    <div class="form-group">
+        <label for="Username">User Name</label>
+        <input 
+        formControlName="Username"
+        id="Username" type="text" class="Username" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="UserRole">User Role</label>
+        <select 
+        formControlName="UserRole"
+        name="UserRole" id="UserRole" class="form-control">
+            <!-- <option value="">Select</option> -->
+            <option value="Admin">Admin</option>
+            <option value="Candidate">Candidate</option>
+        </select>
+    </div>
+    <button 
+    *ngIf="!isInEdit"
+    type="submit" mat-raised-button color="primary" class="form-control">
+        Add User
+    </button>
+    <button 
+    [disabled]="updateBtn"
+    (click)="onUpdate()"
+    *ngIf="isInEdit"
+    type="button" mat-raised-button color="primary" class="form-control">
+       Update User
+    </button>
+</form>

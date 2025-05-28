@@ -1,0 +1,27 @@
+
+
+<div class="row">
+    <div class="col-md-12 text-right">
+        <button 
+        routerLink="addProduct"
+        mat-raised-button color="primary">Add Product</button>
+    </div>
+    <div class="col-lg-4">
+        <!-- list of products -->
+         <ul class="list-group">
+            <li 
+            [ngClass]="{
+                active:prod.pid == selected
+            }"
+           (click)="selected=prod.pid"
+            [queryParams]="{canReturn:prod.canReturn}"
+            [routerLink]="prod.pid"
+            class="list-group-item" *ngFor="let prod of products" >
+                {{prod.pname}}
+            </li>
+         </ul>
+    </div>
+    <div class="col-lg-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>

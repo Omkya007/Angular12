@@ -1,0 +1,25 @@
+
+<div class="row">
+    <div class="col text-right">
+        <button mat-raised-button color="primary" routerLink="addUser" >Add User</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+<ul class="list-group">
+    <li 
+    (click)="onUser(use)"
+    [ngClass]="{
+        active:use.userid ==selected
+    }"
+    class="list-group-item" *ngFor="let use of userInfo" [routerLink]="[use.userid]" [queryParams]="{userRole:use.userrole}">
+            {{use.username}}
+    </li>
+</ul>
+    </div>
+    <div class="col-md-8">
+            <router-outlet></router-outlet>
+    </div>
+  
+</div>
+

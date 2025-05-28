@@ -1,0 +1,20 @@
+
+<div class="card">
+    <div class="card-body">
+        <form #onForm="ngForm" (ngSubmit)="onTodo()">
+            <div class="form-group">
+                <label for="tadaItem">TadaItem</label>
+                <input
+                ngModel
+                required
+                #on="ngModel"
+                type="text" name="tadaItem" id="tadaItem" class="form-control">
+                <strong *ngIf="on.touched && on.hasError('required')">
+                    Enter the Details of Item
+                </strong>
+                
+            </div>
+            <button mat-raised-button color="primary" class="btn-block">Add Todo</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,32 @@
+
+
+<div class="card mt-3">
+    <div class="card-body tour">
+        
+        <div class="from-group ml-3">
+            <span 
+            [ngClass]="{
+                'bg-success':toursObj.checkinstatus,
+                'bg-danger':!toursObj.checkinstatus
+            }"
+            
+            class="isCheckIn">
+    
+            </span>
+        <input 
+        #fullname
+        [disabled]="!isEdit"
+        [value]="toursObj.fullname" type="text" name="" id="">
+        <p *ngIf="toursObj.checkindate;else noDate">
+            Checked In Status:{{toursObj.checkindate|date}}
+        </p>
+        <ng-template #noDate>
+            <p>
+                Check In Status:Not Yet Checked...
+            </p>
+        </ng-template>
+        <button mat-raised-button (click)="isEdit =!isEdit"  *ngIf="!isEdit" color="primary" class="mr-3">Edit</button>
+        <button mat-raised-button   (click)="updateTour(fullname.value)" *ngIf="isEdit" color="primary" class="mr-3">Done</button>
+        <button mat-raised-button (click)="onRemove(toursObj.id)" color="warn" class="mr-3">Delete</button>
+    </div>
+</div>

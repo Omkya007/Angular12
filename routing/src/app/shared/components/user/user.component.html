@@ -1,0 +1,38 @@
+
+<!-- 
+<button routerLink="/product" class="btn btn-primary ">Go to Products</button> -->
+
+<button mat-raised-button color="primary" (click)="onPro()">
+    Go to Products
+</button>
+
+<!-- <li class="list-group" *ngFor="let use of userInfo" routerLink="/user/{{use.UserId}}">
+    {{use.Username}}
+</li> -->
+<div class="row">
+    <div class="col text-right">
+        <button mat-raised-button color="primary" routerLink="/user/addUser">Add User</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <ul  class="list-group">
+            <li 
+            (click)="onUser(use)"
+           [ngClass]="{
+            active:use.UserId==selected
+           }"
+            class="list-group-item" *ngFor="let use of userInfo" [routerLink]="[use.UserId]"
+            [queryParams]="{userRole:use.UserRole}"
+            >
+                {{use.Username}}
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-8">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+

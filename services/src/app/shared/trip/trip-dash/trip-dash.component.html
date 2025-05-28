@@ -1,0 +1,9 @@
+
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let tip of tripArr">
+        {{tip.fullname}}
+    </li>
+</ul>
+
+<app-trip-card [tripObj]="tip"   *ngFor="let tip of tripArr"></app-trip-card>

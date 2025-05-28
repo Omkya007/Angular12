@@ -1,0 +1,48 @@
+
+<form #stdForm="ngForm" (ngSubmit)="onStd()">
+<div class="card">
+    <div class="card-header">
+        <h2>
+            Add Students
+        </h2>
+    </div>
+    <div class="card-body">
+        
+            <div class="form-group">
+                <label for="fname">Fname</label>
+            <input ngModel
+                required
+            #fname="ngModel"
+            type="text" name="fname" id="fname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="lname">Lname</label>
+            <input 
+                required
+            #lname="ngModel"
+            ngModel type="text" name="lname" id="lname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+            <input ngModel 
+                required
+            #email="ngModel"
+            type="email" name="email" id="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="contact">Contact</label>
+            <input 
+                    required
+            #contact="ngModel"
+            ngModel type="number" name="contact" id="contact" class="form-control">
+            </div>
+         
+       
+    </div>
+    <div class="card-footer text-right">
+        <button type="submit"
+        [disabled]="stdForm.invalid"
+        mat-raised-button color="primary" class="btn-block">Add Todo</button>
+    </div>
+</div>
+</form>
